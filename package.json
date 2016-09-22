@@ -2,8 +2,8 @@
   "name": "krk-tweets",
   "version": "1.0.0",
   "description": "ten recent krk tweets",
-  "scripts": { 
-	"start": "node backend/index.js" 
+  "scripts": {
+    "start": "node backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/ankit030592/krk-tweets#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0"
   }
 }
