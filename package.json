@@ -1,0 +1,19 @@
+{
+  "name": "krk-tweets",
+  "version": "1.0.0",
+  "description": "ten recent krk tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit030592/krk-tweets.git"
+  },
+  "author": "ankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit030592/krk-tweets/issues"
+  },
+  "homepage": "https://github.com/ankit030592/krk-tweets#readme"
+}
