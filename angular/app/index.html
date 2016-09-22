@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="Twitter">
+
+<head>
+    <title> Kamaal Rashid Khan' Tweets</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+     <style>
+     body{
+        font-family: "Arial"
+     }
+
+    table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 15px;
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+    </style>
+</head>
+<body ng-controller="twitter_controller">
+    <table ng-hide="info">
+        <thead>
+            <tr>
+                <th> Kamaal Rashid Khan's twitter</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data">
+                <td>{{item}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <div ng-show="info">
+       <iframe src="//giphy.com/embed/l2Sq2zeNqIjuYbcic?html5=true" width="40" height="40" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/gear-loader-l2Sq2zeNqIjuYbcic"></a></p>
+    </div>
+    <button class = "button" ng-click="apiRefresh();">Refresh!</button>
+    <script>
+        var app = angular.module('Twitter', []);
+        app.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+            }]);
+        app.controller('twitter_controller', function($scope, $http) {
+        apiReload();
+    function apiReload() {
+        $scope.info=true;
+    $http.get('http://localhost:3000/api/tweets')
+        .success(function(data) {
+            $scope.data=data[0].tweets;
+            $scope.info=false;
+        }).error(function(data) {
+            console.log(data);
+        })
+    }
+    $scope.apiRefresh = function(){
+        apiReload();
+    }
+});
+    </script>
+</body>
+</html>
