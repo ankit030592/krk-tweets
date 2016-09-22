@@ -17,6 +17,9 @@
   "homepage": "https://github.com/ankit030592/krk-tweets#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongodb": "^1.4.38",
+    "mongoskin": "^1.4.13",
+    "twitter": "^1.4.0"
   }
 }
