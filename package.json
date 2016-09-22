@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ankit030592/krk-tweets/issues"
   },
-  "homepage": "https://github.com/ankit030592/krk-tweets#readme"
+  "homepage": "https://github.com/ankit030592/krk-tweets#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
