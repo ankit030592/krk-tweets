@@ -4,10 +4,22 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var port = process.env.PORT || 3000;
 var path = require('path');
+global.config = require('./config');
+console.log(process.env.USER);
+
+config.env = app.get('env');
+console.log(config.env);
 
 global.mongoskin = require('mongoskin');
 
-var connection_str = "mongodb://@localhost:27017/tweets";
+
+if (config.env === "development") {
+    var connection_str = "mongodb://@localhost:27017/tweets";
+}else{
+	var connection_str = "process.env.MONGODB_URI/tweets";
+}
+
+
 
 global.db = mongoskin.db(connection_str);
 db.bind('krk');
