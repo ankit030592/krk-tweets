@@ -70,7 +70,7 @@
 
         function apiReload() {
             $scope.info = true;
-            $http.get('http://localhost:3000/api/tweets')
+            $http.get('/api/tweets')
                 .success(function(data) {
                     $scope.data = data[0].tweets;
                     $scope.info = false;
